@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jsx小练习</title>
+</head>
+
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        class Wea extends React.Component {
+            handleSubmit = (e) => {
+                e.preventDefault()
+
+            }
+            demo = () => {
+                console.log('demo');
+            }
+            render() {
+                return (
+                    <form action="www.baidu.com" onSubmit={this.handleSubmit}>
+                        name:<input onChange={this.demo} type="text" name="username" />
+                        pass:<input type="password" name='pass' />
+                        <button >login</button>
+                    </form>
+                )
+            }
+        }
+        function demo() {
+            console.log(111);
+        }
+        // 注意大写
+        ReactDOM.render(<Wea />, document.getElementById('test'))
+    </script>
+</body>
+
+</html>
