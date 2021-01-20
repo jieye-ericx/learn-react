@@ -1,22 +1,9 @@
 import React, { Component } from 'react'
 import './index.css'
-import PubSub from 'pubsub-js'
 
 export default class List extends Component {
-	state = { //初始化状态
-		users: [], //users初始值为数组
-		isFirst: true,
-		isLoading: false,
-		err: ''
-	}
-
-	componentDidMount() {
-		PubSub.subscribe('11', (_, data) => {
-			this.setState(data)
-		})
-	}
 	render() {
-		const { users, isFirst, isLoading, err } = this.state
+		const { users, isFirst, isLoading, err } = this.props
 		return (
 			<div className="row">
 				{

@@ -4,7 +4,12 @@ import List from './components/List'
 
 export default class App extends Component {
 
-
+	state = { //初始化状态
+		users: [], //users初始值为数组
+		isFirst: true,
+		isLoading: false,
+		err: ''
+	} 
 
 	//更新App的state
 	updateState = (stateObj) => {
